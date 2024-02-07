@@ -65,3 +65,23 @@ stages:
       hash: md5
       md5: 2498567df73d6f45e95b77497f2fe066
       size: 640878
+  evaluate:
+    cmd: python3 scripts/model_scripts/evaluate.py
+    deps:
+    - path: data/prepared/test.csv
+      hash: md5
+      md5: bd39bcabfdc4515fef237388f9b81349
+      size: 69619
+    - path: model.pkl
+      hash: md5
+      md5: 2498567df73d6f45e95b77497f2fe066
+      size: 640878
+    - path: scripts/model_scripts/evaluate.py
+      hash: md5
+      md5: c0cac065ecaa14299cac9b4185c1895e
+      size: 551
+    outs:
+    - path: evaluate/score.json
+      hash: md5
+      md5: bc84d11f68a38c5294aae0103e3023c8
+      size: 29
