@@ -42,3 +42,26 @@ stages:
       md5: b2fdf5531ec80902ecf5ce8fbb3f4c4f.dir
       size: 371822
       nfiles: 2
+  model-training:
+    cmd: python3 scripts/model_scripts/model_training.py
+    deps:
+    - path: data/prepared/test.csv
+      hash: md5
+      md5: bd39bcabfdc4515fef237388f9b81349
+      size: 69619
+    - path: data/prepared/train.csv
+      hash: md5
+      md5: d9ae72cfbc298925a5c373369a508bcc
+      size: 302203
+    - path: scripts/model_scripts/model_training.py
+      hash: md5
+      md5: ee1e8598d2ce7f3f9160d6c74b042aad
+      size: 560
+    params:
+      params.yaml:
+        estimator.n_estimators: 300
+    outs:
+    - path: model.pkl
+      hash: md5
+      md5: 2498567df73d6f45e95b77497f2fe066
+      size: 640878
